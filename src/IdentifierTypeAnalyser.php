@@ -76,4 +76,13 @@ class IdentifierTypeAnalyser
 
         return $this->isDomIdentifier($identifierWithoutParent);
     }
+
+    public function isDomOrDescendantDomIdentifier(string $identifier): bool
+    {
+        if ($this->isDomIdentifier($identifier)) {
+            return true;
+        }
+
+        return $this->isDescendantDomIdentifier($identifier);
+    }
 }
