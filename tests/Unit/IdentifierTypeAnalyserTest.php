@@ -118,11 +118,21 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     /**
      * @dataProvider descendantDomIdentifierDataProvider
      */
-    public function testIsDescendantDomIdentifierTest(string $identifier)
+    public function testIsDescendantDomIdentifier(string $identifier)
     {
         $this->assertTrue($this->analyser->isDescendantDomIdentifier($identifier));
     }
 
+    /**
+     * @dataProvider cssSelectorDataProvider
+     * @dataProvider xPathExpressionDataProvider
+     * @dataProvider attributeSelectorDataProvider
+     * @dataProvider descendantDomIdentifierDataProvider
+     */
+    public function testIsDomOrDescendantDomIdentifier(string $identifier)
+    {
+        $this->assertTrue($this->analyser->isDomOrDescendantDomIdentifier($identifier));
+    }
 
     public function cssSelectorDataProvider(): array
     {
