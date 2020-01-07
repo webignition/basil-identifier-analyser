@@ -9,7 +9,7 @@ class IdentifierTypeAnalyser
     private const POSITION_PATTERN = ':(-?[0-9]+|first|last)';
     private const ELEMENT_IDENTIFIER_STARTING_PATTERN = '\$"';
     private const ELEMENT_IDENTIFIER_ENDING_PATTERN = '("|' . self::POSITION_PATTERN . ')';
-    private const CSS_SELECTOR_STARTING_PATTERN = '((?!\/).).+';
+    private const CSS_SELECTOR_STARTING_PATTERN = '((?!\/).?).+';
     private const XPATH_EXPRESSION_STARTING_PATTERN = '\/.+';
     public const PARENT_PREFIX_REGEX = '/^\{\{ [^\}]+ \}\} /';
 
