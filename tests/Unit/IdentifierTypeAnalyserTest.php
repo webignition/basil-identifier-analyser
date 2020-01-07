@@ -138,6 +138,12 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     {
         return [
             [
+                'identifierString' =>  '$"body"',
+            ],
+            [
+                'identifierString' =>  '$"a"',
+            ],
+            [
                 'identifierString' =>  '$".selector"',
             ],
             [
