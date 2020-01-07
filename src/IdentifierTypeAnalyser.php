@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace webignition\BasilIdentifierAnalyser;
 
+use webignition\BasilDomIdentifierFactory\Extractor\DescendantIdentifierExtractor;
+
 class IdentifierTypeAnalyser
 {
     private const POSITION_PATTERN = ':(-?[0-9]+|first|last)';
@@ -11,7 +13,6 @@ class IdentifierTypeAnalyser
     private const ELEMENT_IDENTIFIER_ENDING_PATTERN = '("|' . self::POSITION_PATTERN . ')';
     private const CSS_SELECTOR_STARTING_PATTERN = '((?!\/).?).+';
     private const XPATH_EXPRESSION_STARTING_PATTERN = '\/.+';
-    public const PARENT_PREFIX_REGEX = '/^\{\{ [^\}]+ \}\} /';
 
     private const CSS_SELECTOR_REGEX =
         '/^' . self::ELEMENT_IDENTIFIER_STARTING_PATTERN .
@@ -32,9 +33,24 @@ class IdentifierTypeAnalyser
         '\.(.+)' .
         '$/';
 
+    private $descendantIdentifierExtractor;
+
+    public function __construct(DescendantIdentifierExtractor $descendantIdentifierExtractor)
+    {
+        $this->descendantIdentifierExtractor = $descendantIdentifierExtractor;
+    }
+
+    public static function create(): IdentifierTypeAnalyser
+    {
+        return new IdentifierTypeAnalyser(
+            DescendantIdentifierExtractor::createExtractor()
+        );
+    }
+
     public function isCssSelector(string $identifier): bool
     {
-        return 1 === preg_match(self::CSS_SELECTOR_REGEX, $identifier);
+        return 1 === preg_match(self::CSS_SELECTOR_REGEX, $identifier) &&
+            !$this->isDescendantDomIdentifier($identifier);
     }
 
     public function isXpathExpression(string $identifier): bool
@@ -53,7 +69,8 @@ class IdentifierTypeAnalyser
             return false;
         }
 
-        return 1 === preg_match(self::ATTRIBUTE_IDENTIFIER_REGEX, $identifier);
+        return 1 === preg_match(self::ATTRIBUTE_IDENTIFIER_REGEX, $identifier) &&
+            !$this->isDescendantDomIdentifier($identifier);
     }
 
     public function isDomIdentifier(string $identifier): bool
@@ -63,18 +80,7 @@ class IdentifierTypeAnalyser
 
     public function isDescendantDomIdentifier(string $identifier): bool
     {
-        $parentMatches = [];
-
-        if (0 === preg_match(self::PARENT_PREFIX_REGEX, $identifier, $parentMatches)) {
-            return false;
-        }
-
-        $parentMatch = (string) $parentMatches[0];
-        $parentMatchLength = mb_strlen($parentMatch);
-
-        $identifierWithoutParent = mb_substr($identifier, $parentMatchLength);
-
-        return $this->isDomIdentifier($identifierWithoutParent);
+        return $this->descendantIdentifierExtractor->extractIdentifier($identifier) === $identifier;
     }
 
     public function isDomOrDescendantDomIdentifier(string $identifier): bool
