@@ -17,7 +17,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     {
         parent::setUp();
 
-        $this->analyser = new IdentifierTypeAnalyser();
+        $this->analyser = IdentifierTypeAnalyser::create();
     }
 
     /**
@@ -286,28 +286,28 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     {
         return [
             [
-                'identifierString' =>  '{{ $".parent" }} $".selector"',
+                'identifierString' => '$"{{ $".parent" }} .child"',
             ],
             [
-                'identifierString' =>  '{{ $".parent" }} $"/body"',
+                'identifierString' => '$"{{ $"{{ $".grandparent" }} .parent" }} .child"',
             ],
             [
-                'identifierString' =>  '{{ $".parent" }} $".selector".attribute_name',
+                'identifierString' => '$"{{ $".parent" }} //child"',
             ],
             [
-                'identifierString' =>  '{{ $".parent" }} $"/body".attribute_name',
+                'identifierString' => '$"{{ $"{{ $".grandparent" }} //parent" }} //child"',
             ],
             [
-                'identifierString' =>  '{{ $"/parent" }} $".selector"',
+                'identifierString' => '$"{{ $".parent" }} .child".attribute_name',
             ],
             [
-                'identifierString' =>  '{{ $"/parent" }} $"/body"',
+                'identifierString' => '$"{{ $"{{ $".grandparent" }} .parent" }} .child".attribute_name',
             ],
             [
-                'identifierString' =>  '{{ $"/parent" }} $".selector".attribute_name',
+                'identifierString' => '$"{{ $".parent" }} //child".attribute_name',
             ],
             [
-                'identifierString' =>  '{{ $"/parent" }} $"/body".attribute_name',
+                'identifierString' => '$"{{ $"{{ $".grandparent" }} //parent" }} //child".attribute_name',
             ],
         ];
     }
