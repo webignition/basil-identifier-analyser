@@ -286,28 +286,28 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     {
         return [
             [
-                'identifierString' => '$"{{ $".parent" }} .child"',
+                'identifierString' => '$".parent" >> $".child"',
             ],
             [
-                'identifierString' => '$"{{ $"{{ $".grandparent" }} .parent" }} .child"',
+                'identifierString' => '$".grandparent" >> $".parent" >> $".child"',
             ],
             [
-                'identifierString' => '$"{{ $".parent" }} //child"',
+                'identifierString' => '$".parent" >> $"//child"',
             ],
             [
-                'identifierString' => '$"{{ $"{{ $".grandparent" }} //parent" }} //child"',
+                'identifierString' => '$".grandparent" >> $"//parent" >> $"//child"',
             ],
             [
-                'identifierString' => '$"{{ $".parent" }} .child".attribute_name',
+                'identifierString' => '$".parent" >> $".child".attribute_name',
             ],
             [
-                'identifierString' => '$"{{ $"{{ $".grandparent" }} .parent" }} .child".attribute_name',
+                'identifierString' => '$".grandparent" >> $".parent" >> $".child".attribute_name',
             ],
             [
-                'identifierString' => '$"{{ $".parent" }} //child".attribute_name',
+                'identifierString' => '$".parent" >> $"//child".attribute_name',
             ],
             [
-                'identifierString' => '$"{{ $"{{ $".grandparent" }} //parent" }} //child".attribute_name',
+                'identifierString' => '$".grandparent" >> $"//parent" >> $"//child".attribute_name',
             ],
         ];
     }

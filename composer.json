@@ -33,7 +33,7 @@
     },
     "require": {
         "php": ">=7.2",
-        "webignition/basil-dom-identifier-factory": ">=0.7,<1"
+        "webignition/basil-dom-identifier-factory": ">=0.9,<1"
     },
     "require-dev": {
         "phpunit/phpunit": "~8.0",

@@ -4,26 +4,26 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8859944d34289e0182509cc471f82cd6",
+    "content-hash": "afb7d8edbca487075358fba474b57478",
     "packages": [
         {
             "name": "webignition/basil-dom-identifier-factory",
-            "version": "0.7",
+            "version": "0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/basil-dom-identifier-factory.git",
-                "reference": "e25041c25415940021702d8b8d233326df88129f"
+                "reference": "c09739edfc0153b05d9e628777cb0e5752ddf6d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/basil-dom-identifier-factory/zipball/e25041c25415940021702d8b8d233326df88129f",
-                "reference": "e25041c25415940021702d8b8d233326df88129f",
+                "url": "https://api.github.com/repos/webignition/basil-dom-identifier-factory/zipball/c09739edfc0153b05d9e628777cb0e5752ddf6d0",
+                "reference": "c09739edfc0153b05d9e628777cb0e5752ddf6d0",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
                 "php": ">=7.2",
-                "webignition/php-dom-element-identifier": ">=0.6,<1",
+                "webignition/php-dom-element-identifier": ">=0.10,<1",
                 "webignition/quoted-string-value-extractor": ">=0.1,<1"
             },
             "require-dev": {
@@ -48,20 +48,20 @@
                 }
             ],
             "homepage": "https://github.com/webignition/basil-dom-identifier-factory",
-            "time": "2020-01-07T19:31:36+00:00"
+            "time": "2020-04-13T16:27:29+00:00"
         },
         {
             "name": "webignition/php-dom-element-identifier",
-            "version": "0.10",
+            "version": "0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/php-dom-element-identifier.git",
-                "reference": "fcb502c1fc4377a50172d108c63444db86eca188"
+                "reference": "4765257e44c8958f77434347dee16e1356f287d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/php-dom-element-identifier/zipball/fcb502c1fc4377a50172d108c63444db86eca188",
-                "reference": "fcb502c1fc4377a50172d108c63444db86eca188",
+                "url": "https://api.github.com/repos/webignition/php-dom-element-identifier/zipball/4765257e44c8958f77434347dee16e1356f287d7",
+                "reference": "4765257e44c8958f77434347dee16e1356f287d7",
                 "shasum": ""
             },
             "require": {
@@ -91,20 +91,20 @@
                 }
             ],
             "homepage": "https://github.com/webignition/php-dom-element-identifier",
-            "time": "2019-12-31T08:39:47+00:00"
+            "time": "2020-04-01T17:47:32+00:00"
         },
         {
             "name": "webignition/php-dom-element-locator",
-            "version": "0.2",
+            "version": "0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/php-dom-element-locator.git",
-                "reference": "5f86d51d0a40fc7e8817d229adfbd33106010a63"
+                "reference": "db0e5947250402fd8df5187a3fe8d754723e1297"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/php-dom-element-locator/zipball/5f86d51d0a40fc7e8817d229adfbd33106010a63",
-                "reference": "5f86d51d0a40fc7e8817d229adfbd33106010a63",
+                "url": "https://api.github.com/repos/webignition/php-dom-element-locator/zipball/db0e5947250402fd8df5187a3fe8d754723e1297",
+                "reference": "db0e5947250402fd8df5187a3fe8d754723e1297",
                 "shasum": ""
             },
             "require": {
@@ -133,7 +133,7 @@
             ],
             "description": "Model for identifying the location of an element within a DOM",
             "homepage": "https://github.com/webignition/php-dom-element-locator",
-            "time": "2019-12-18T15:59:38+00:00"
+            "time": "2020-04-13T14:54:45+00:00"
         },
         {
             "name": "webignition/quoted-string-value-extractor",
@@ -2960,5 +2960,6 @@
     "platform": {
         "php": ">=7.2"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
