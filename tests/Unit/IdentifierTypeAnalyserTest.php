@@ -309,6 +309,9 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
             [
                 'identifierString' => '$".grandparent" >> $"//parent" >> $"//child".attribute_name',
             ],
+            [
+                'identifierString' => '$parent >> $".child"',
+            ],
         ];
     }
 }
