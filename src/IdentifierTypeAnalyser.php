@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace webignition\BasilIdentifierAnalyser;
 
-use webignition\BasilDomIdentifierFactory\Extractor\DescendantIdentifierExtractor;
+use webignition\BasilValueExtractor\DescendantIdentifierExtractor;
 
 class IdentifierTypeAnalyser
 {
