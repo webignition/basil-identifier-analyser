@@ -8,10 +8,7 @@ use webignition\BasilIdentifierAnalyser\IdentifierTypeAnalyser;
 
 class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var IdentifierTypeAnalyser
-     */
-    private $analyser;
+    private IdentifierTypeAnalyser $analyser;
 
     protected function setUp(): void
     {
