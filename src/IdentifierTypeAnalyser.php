@@ -33,7 +33,7 @@ class IdentifierTypeAnalyser
         '\.(.+)' .
         '$/';
 
-    private $descendantIdentifierExtractor;
+    private DescendantIdentifierExtractor $descendantIdentifierExtractor;
 
     public function __construct(DescendantIdentifierExtractor $descendantIdentifierExtractor)
     {
