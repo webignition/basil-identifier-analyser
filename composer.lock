@@ -4,31 +4,32 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b69db6c093aa043ff0b93ca62020b52e",
+    "content-hash": "e8443433afc75fd6322500818a16bd66",
     "packages": [
         {
             "name": "webignition/basil-value-extractor",
-            "version": "0.4",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webignition/basil-value-extractor.git",
-                "reference": "dab3842bf31cd93a0cf7d2f440d4cbf4d2004900"
+                "reference": "bf0a0d18461e4aabf53232b8404ef84970dee5b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webignition/basil-value-extractor/zipball/dab3842bf31cd93a0cf7d2f440d4cbf4d2004900",
-                "reference": "dab3842bf31cd93a0cf7d2f440d4cbf4d2004900",
+                "url": "https://api.github.com/repos/webignition/basil-value-extractor/zipball/bf0a0d18461e4aabf53232b8404ef84970dee5b7",
+                "reference": "bf0a0d18461e4aabf53232b8404ef84970dee5b7",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
-                "php": ">=7.4"
+                "php": ">=7.4|^8"
             },
             "require-dev": {
                 "php-mock/php-mock-mockery": "^1.3",
-                "phpstan/phpstan": "^0.12",
-                "phpunit/phpunit": "~9",
-                "squizlabs/php_codesniffer": "3.*"
+                "phpstan/phpstan": "^0.12.77",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^3.5",
+                "symplify/easy-coding-standard": "^9.1"
             },
             "type": "library",
             "autoload": {
@@ -47,7 +48,11 @@
                 }
             ],
             "homepage": "https://github.com/webignition/basil-value-extractor",
-            "time": "2020-05-27T16:00:25+00:00"
+            "support": {
+                "issues": "https://github.com/webignition/basil-value-extractor/issues",
+                "source": "https://github.com/webignition/basil-value-extractor/tree/0.5"
+            },
+            "time": "2021-02-19T11:09:28+00:00"
         }
     ],
     "packages-dev": [
@@ -6529,7 +6534,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.4"
+        "php": ">=7.4|^8"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"

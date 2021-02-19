@@ -33,8 +33,8 @@
         ]
     },
     "require": {
-        "php": ">=7.4",
-        "webignition/basil-value-extractor": ">=0.4,<1"
+        "php": ">=7.4|^8",
+        "webignition/basil-value-extractor": ">=0.5,<1"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
