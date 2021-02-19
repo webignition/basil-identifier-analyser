@@ -138,40 +138,40 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     {
         return [
             [
-                'identifierString' =>  '$"body"',
+                'identifierString' => '$"body"',
             ],
             [
-                'identifierString' =>  '$"a"',
+                'identifierString' => '$"a"',
             ],
             [
-                'identifierString' =>  '$".selector"',
+                'identifierString' => '$".selector"',
             ],
             [
-                'identifierString' =>  '$".selector .foo"',
+                'identifierString' => '$".selector .foo"',
             ],
             [
-                'identifierString' =>  '$".selector.foo"',
+                'identifierString' => '$".selector.foo"',
             ],
             [
-                'identifierString' =>  '$"#id"',
+                'identifierString' => '$"#id"',
             ],
             [
-                'identifierString' =>  '$".selector[data-foo=bar]"',
+                'identifierString' => '$".selector[data-foo=bar]"',
             ],
             [
-                'identifierString' =>  '$".selector":0',
+                'identifierString' => '$".selector":0',
             ],
             [
-                'identifierString' =>  '$".selector":1',
+                'identifierString' => '$".selector":1',
             ],
             [
-                'identifierString' =>  '$".selector":-1',
+                'identifierString' => '$".selector":-1',
             ],
             [
-                'identifierString' =>  '$".selector":first',
+                'identifierString' => '$".selector":first',
             ],
             [
-                'identifierString' =>  '$".selector":last',
+                'identifierString' => '$".selector":last',
             ],
         ];
     }
@@ -183,31 +183,31 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     {
         return [
             [
-                'identifierString' =>  '$"/body"',
+                'identifierString' => '$"/body"',
             ],
             [
-                'identifierString' =>  '$"//foo"',
+                'identifierString' => '$"//foo"',
             ],
             [
-                'identifierString' =>  '$"//*[@id="id"]"',
+                'identifierString' => '$"//*[@id="id"]"',
             ],
             [
-                'identifierString' =>  '$"//hr[@class=\'edge\']"',
+                'identifierString' => '$"//hr[@class=\'edge\']"',
             ],
             [
-                'identifierString' =>  '$"/body":0',
+                'identifierString' => '$"/body":0',
             ],
             [
-                'identifierString' =>  '$"/body":1',
+                'identifierString' => '$"/body":1',
             ],
             [
-                'identifierString' =>  '$"/body":-1',
+                'identifierString' => '$"/body":-1',
             ],
             [
-                'identifierString' =>  '$"/body":first',
+                'identifierString' => '$"/body":first',
             ],
             [
-                'identifierString' =>  '$"/body":last',
+                'identifierString' => '$"/body":last',
             ],
         ];
     }
@@ -219,46 +219,46 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     {
         return [
             [
-                'identifierString' =>  '$".selector".attribute_name',
+                'identifierString' => '$".selector".attribute_name',
             ],
             [
-                'identifierString' =>  '$".selector .foo".attribute_name',
+                'identifierString' => '$".selector .foo".attribute_name',
             ],
             [
-                'identifierString' =>  '$".selector.foo".attribute_name',
+                'identifierString' => '$".selector.foo".attribute_name',
             ],
             [
-                'identifierString' =>  '$"#id".attribute_name',
+                'identifierString' => '$"#id".attribute_name',
             ],
             [
-                'identifierString' =>  '$".selector[data-foo=bar]".attribute_name',
+                'identifierString' => '$".selector[data-foo=bar]".attribute_name',
             ],
             [
-                'identifierString' =>  '$"/body".attribute_name',
+                'identifierString' => '$"/body".attribute_name',
             ],
             [
-                'identifierString' =>  '$"//foo".attribute_name',
+                'identifierString' => '$"//foo".attribute_name',
             ],
             [
-                'identifierString' =>  '$"//*[@id="id"]".attribute_name',
+                'identifierString' => '$"//*[@id="id"]".attribute_name',
             ],
             [
-                'identifierString' =>  '$"//hr[@class=\'edge\']".attribute_name',
+                'identifierString' => '$"//hr[@class=\'edge\']".attribute_name',
             ],
             [
-                'identifierString' =>  '$".selector":0.attribute_name',
+                'identifierString' => '$".selector":0.attribute_name',
             ],
             [
-                'identifierString' =>  '$".selector":1.attribute_name',
+                'identifierString' => '$".selector":1.attribute_name',
             ],
             [
-                'identifierString' =>  '$".selector":-1.attribute_name',
+                'identifierString' => '$".selector":-1.attribute_name',
             ],
             [
-                'identifierString' =>  '$".selector":first.attribute_name',
+                'identifierString' => '$".selector":first.attribute_name',
             ],
             [
-                'identifierString' =>  '$".selector":last.attribute_name',
+                'identifierString' => '$".selector":last.attribute_name',
             ],
         ];
     }
@@ -279,13 +279,13 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
                 'identifierString' => '"invalid"',
             ],
             'element reference' => [
-                'identifierString' =>  '$elements.element_name',
+                'identifierString' => '$elements.element_name',
             ],
             'page element reference' => [
                 'identifierString' => '$page_import_name.elements.element_name',
             ],
             'attribute reference' => [
-                'identifierString' =>  '$elements.element_name.attribute_name',
+                'identifierString' => '$elements.element_name.attribute_name',
             ],
         ];
     }
