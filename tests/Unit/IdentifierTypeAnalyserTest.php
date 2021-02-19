@@ -20,7 +20,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     /**
      * @dataProvider cssSelectorDataProvider
      */
-    public function testIsCssSelector(string $identifier)
+    public function testIsCssSelector(string $identifier): void
     {
         $this->assertTrue($this->analyser->isCssSelector($identifier));
     }
@@ -31,7 +31,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
      * @dataProvider unknownTypeDataProvider
      * @dataProvider descendantDomIdentifierDataProvider
      */
-    public function testIsNotCssSelector(string $identifier)
+    public function testIsNotCssSelector(string $identifier): void
     {
         $this->assertFalse($this->analyser->isCssSelector($identifier));
     }
@@ -39,7 +39,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     /**
      * @dataProvider xPathExpressionDataProvider
      */
-    public function testIsXpathExpression(string $identifier)
+    public function testIsXpathExpression(string $identifier): void
     {
         $this->assertTrue($this->analyser->isXpathExpression($identifier));
     }
@@ -50,7 +50,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
      * @dataProvider unknownTypeDataProvider
      * @dataProvider descendantDomIdentifierDataProvider
      */
-    public function testIsNotXpathExpression(string $identifier)
+    public function testIsNotXpathExpression(string $identifier): void
     {
         $this->assertFalse($this->analyser->isXpathExpression($identifier));
     }
@@ -59,7 +59,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
      * @dataProvider cssSelectorDataProvider
      * @dataProvider xPathExpressionDataProvider
      */
-    public function testIsElementIdentifier(string $identifier)
+    public function testIsElementIdentifier(string $identifier): void
     {
         $this->assertTrue($this->analyser->isElementIdentifier($identifier));
     }
@@ -69,7 +69,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
      * @dataProvider unknownTypeDataProvider
      * @dataProvider descendantDomIdentifierDataProvider
      */
-    public function testIsNotElementIdentifier(string $identifier)
+    public function testIsNotElementIdentifier(string $identifier): void
     {
         $this->assertFalse($this->analyser->isElementIdentifier($identifier));
     }
@@ -77,7 +77,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     /**
      * @dataProvider attributeSelectorDataProvider
      */
-    public function testIsAttributeIdentifier(string $identifier)
+    public function testIsAttributeIdentifier(string $identifier): void
     {
         $this->assertTrue($this->analyser->isAttributeIdentifier($identifier));
     }
@@ -88,7 +88,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
      * @dataProvider unknownTypeDataProvider
      * @dataProvider descendantDomIdentifierDataProvider
      */
-    public function testIsNotAttributeIdentifier(string $identifier)
+    public function testIsNotAttributeIdentifier(string $identifier): void
     {
         $this->assertFalse($this->analyser->isAttributeIdentifier($identifier));
     }
@@ -98,7 +98,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
      * @dataProvider xPathExpressionDataProvider
      * @dataProvider attributeSelectorDataProvider
      */
-    public function testIsDomIdentifier(string $identifier)
+    public function testIsDomIdentifier(string $identifier): void
     {
         $this->assertTrue($this->analyser->isDomIdentifier($identifier));
     }
@@ -107,7 +107,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
      * @dataProvider unknownTypeDataProvider
      * @dataProvider descendantDomIdentifierDataProvider
      */
-    public function testIsNotDomIdentifier(string $identifier)
+    public function testIsNotDomIdentifier(string $identifier): void
     {
         $this->assertFalse($this->analyser->isDomIdentifier($identifier));
     }
@@ -115,7 +115,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     /**
      * @dataProvider descendantDomIdentifierDataProvider
      */
-    public function testIsDescendantDomIdentifier(string $identifier)
+    public function testIsDescendantDomIdentifier(string $identifier): void
     {
         $this->assertTrue($this->analyser->isDescendantDomIdentifier($identifier));
     }
@@ -126,11 +126,14 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
      * @dataProvider attributeSelectorDataProvider
      * @dataProvider descendantDomIdentifierDataProvider
      */
-    public function testIsDomOrDescendantDomIdentifier(string $identifier)
+    public function testIsDomOrDescendantDomIdentifier(string $identifier): void
     {
         $this->assertTrue($this->analyser->isDomOrDescendantDomIdentifier($identifier));
     }
 
+    /**
+     * @return array[]
+     */
     public function cssSelectorDataProvider(): array
     {
         return [
@@ -173,7 +176,9 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
-
+    /**
+     * @return array[]
+     */
     public function xPathExpressionDataProvider(): array
     {
         return [
@@ -207,6 +212,9 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
+    /**
+     * @return array[]
+     */
     public function attributeSelectorDataProvider(): array
     {
         return [
@@ -255,6 +263,9 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
+    /**
+     * @return array[]
+     */
     public function unknownTypeDataProvider(): array
     {
         return  [
@@ -279,6 +290,9 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
         ];
     }
 
+    /**
+     * @return array[]
+     */
     public function descendantDomIdentifierDataProvider(): array
     {
         return [
