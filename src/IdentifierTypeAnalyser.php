@@ -49,8 +49,8 @@ class IdentifierTypeAnalyser
 
     public function isCssSelector(string $identifier): bool
     {
-        return 1 === preg_match(self::CSS_SELECTOR_REGEX, $identifier) &&
-            !$this->isDescendantDomIdentifier($identifier);
+        return 1 === preg_match(self::CSS_SELECTOR_REGEX, $identifier)
+            && !$this->isDescendantDomIdentifier($identifier);
     }
 
     public function isXpathExpression(string $identifier): bool
@@ -69,8 +69,8 @@ class IdentifierTypeAnalyser
             return false;
         }
 
-        return 1 === preg_match(self::ATTRIBUTE_IDENTIFIER_REGEX, $identifier) &&
-            !$this->isDescendantDomIdentifier($identifier);
+        return 1 === preg_match(self::ATTRIBUTE_IDENTIFIER_REGEX, $identifier)
+            && !$this->isDescendantDomIdentifier($identifier);
     }
 
     public function isDomIdentifier(string $identifier): bool

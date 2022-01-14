@@ -268,7 +268,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
      */
     public function unknownTypeDataProvider(): array
     {
-        return  [
+        return [
             'empty' => [
                 'identifierString' => '',
             ],
