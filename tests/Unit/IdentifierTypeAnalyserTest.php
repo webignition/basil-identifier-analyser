@@ -132,7 +132,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @return array[]
+     * @return array<mixed>
      */
     public function cssSelectorDataProvider(): array
     {
@@ -177,7 +177,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @return array[]
+     * @return array<mixed>
      */
     public function xPathExpressionDataProvider(): array
     {
@@ -213,7 +213,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @return array[]
+     * @return array<mixed>
      */
     public function attributeSelectorDataProvider(): array
     {
@@ -264,11 +264,11 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @return array[]
+     * @return array<mixed>
      */
     public function unknownTypeDataProvider(): array
     {
-        return  [
+        return [
             'empty' => [
                 'identifierString' => '',
             ],
@@ -291,7 +291,7 @@ class IdentifierTypeAnalyserTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @return array[]
+     * @return array<mixed>
      */
     public function descendantDomIdentifierDataProvider(): array
     {
